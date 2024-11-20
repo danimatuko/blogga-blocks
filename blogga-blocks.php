@@ -14,7 +14,7 @@
  * @package BloggaBlocks
  */
 
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
@@ -28,22 +28,21 @@ if (!defined('ABSPATH')) {
  *
  * @return void
  */
-function blogga_blocks_register_blocks()
-{
+function blogga_blocks_register_blocks() {
 	$blocks_dir = __DIR__ . '/build';
 
 	// Ensure the directory exists.
-	if (!is_dir($blocks_dir)) {
+	if ( ! is_dir( $blocks_dir ) ) {
 		return;
 	}
 
 	// Recursively scan for block.json files.
-	$block_files = glob($blocks_dir . '/*/block.json');
+	$block_files = glob( $blocks_dir . '/*/block.json' );
 
 	// Loop through and register each block.
-	foreach ($block_files as $block_file) {
-		register_block_type(dirname($block_file));
+	foreach ( $block_files as $block_file ) {
+		register_block_type( dirname( $block_file ) );
 	}
 }
 
-add_action('init', 'blogga_blocks_register_blocks');
+add_action( 'init', 'blogga_blocks_register_blocks' );

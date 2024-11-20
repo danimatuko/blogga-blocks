@@ -1,0 +1,30 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+%blogga-search-input {
+	color: #fff;
+	background: #212121;
+	width: inherit;
+	min-width: 300px;
+	border: none;
+	-webkit-transition: .3s all ease;
+	-o-transition: .3s all ease;
+	transition: .3s all ease;
+	padding: 4px 30px 4px 15px;
+	font-size: 16px;
+
+	&:focus {
+		background: #333333;
+		outline: none;
+	}
+}
+
+.wp-block-blogga-blocks-search {
+	.wp-block-search__input {
+		@extend %blogga-search-input;
+	}
+}

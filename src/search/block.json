@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blogga-blocks/search",
+	"version": "0.1.0",
+	"title": "Search",
+	"category": "widgets",
+	"icon": "search",
+	"description": "A wrapper for the core search block with custom styles.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "search",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
