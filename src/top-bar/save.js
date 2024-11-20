@@ -16,9 +16,8 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save() {
-	const blockProps = useBlockProps.save( { className: 'bb-search-wrapper' } );
 	return (
-		<div { ...blockProps }>
+		<div { ...useBlockProps.save() }>
 			<InnerBlocks.Content />
 		</div>
 	);

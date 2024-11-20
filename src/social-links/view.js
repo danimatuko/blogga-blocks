@@ -21,5 +21,5 @@
  */
 
 /* eslint-disable no-console */
-console.log( 'Hello World! (from blogga-blocks-search block)' );
+console.log( 'Hello World! (from blogga-blocks-social-links block)' );
 /* eslint-enable no-console */
