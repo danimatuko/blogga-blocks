@@ -10,9 +10,15 @@
 	"example": {},
 	"supports": {
 		"html": false,
+		"layout": true,
 		"spacing": {
 			"margin": true,
 			"padding": true
+		},
+		"color": {
+			"gradients": true,
+			"background": true,
+			"text": false
 		}
 	},
 	"textdomain": "top-bar",
