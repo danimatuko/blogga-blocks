@@ -14,35 +14,14 @@
  * @package BloggaBlocks
  */
 
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	exit;
 }
 
+// Define constants for paths and URLs.
+define( 'BLOGGA_BLOCKS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'BLOGGA_BLOCKS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-/**
- * Registers all Gutenberg blocks in the `build` directory.
- *
- * This function scans the `build` directory for `block.json` files
- * and registers each block using its metadata. It ensures that only
- * built blocks are registered in the WordPress block editor.
- *
- * @return void
- */
-function blogga_blocks_register_blocks() {
-	$blocks_dir = __DIR__ . '/build';
-
-	// Ensure the directory exists.
-	if ( ! is_dir( $blocks_dir ) ) {
-		return;
-	}
-
-	// Recursively scan for block.json files.
-	$block_files = glob( $blocks_dir . '/*/block.json' );
-
-	// Loop through and register each block.
-	foreach ( $block_files as $block_file ) {
-		register_block_type( dirname( $block_file ) );
-	}
-}
-
-add_action( 'init', 'blogga_blocks_register_blocks' );
+// Include block registration functionality.
+require_once BLOGGA_BLOCKS_PLUGIN_DIR . 'includes/register-blocks.php';
