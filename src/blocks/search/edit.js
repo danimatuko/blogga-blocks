@@ -1,5 +1,4 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import './editor.scss';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -10,13 +9,13 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit() {
-	const blockProps = useBlockProps( { className: 'bb-search-wrapper' } );
+	const blockProps = useBlockProps({ className: 'bb-search-wrapper' });
 
 	return (
-		<div { ...blockProps }>
+		<div {...blockProps}>
 			<InnerBlocks
-				allowedBlocks={ [ 'core/search' ] }
-				template={ [ [ 'core/search' ] ] }
+				allowedBlocks={['core/search']}
+				template={[['core/search']]}
 				templateLock="insert" // Prevent users from removing the search block
 			/>
 		</div>
